@@ -1,0 +1,15 @@
+.navbar {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  display: flex; /* Use flexbox for horizontal layout */
+  gap: 20px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: white;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: black;
+}
