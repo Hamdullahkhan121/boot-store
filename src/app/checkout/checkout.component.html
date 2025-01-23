@@ -1,0 +1,13 @@
+<h2>Checkout</h2>
+
+    <div *ngIf="cartService.cartItems().length === 0">Your cart is empty.</div>
+    <div *ngIf="cartService.cartItems().length > 0">
+        <h3>Order Summary</h3>
+        <ul>
+            <li *ngFor="let item of cartService.cartItems()">
+                {{ item.book.title }} x {{item.quantity}} - ${{item.book.price * item.quantity}}
+            </li>
+        </ul>
+        <p>Total: ${{cartService.getCartTotal()}}</p>
+        <button (click)="submitOrder()">Submit Order</button>
+    </div>
