@@ -1,14 +1,31 @@
-<h2>Available Books</h2>
-    <ul *ngIf="books && books.length > 0; else noBooks">
+<app-search-bar (search)="onSearch($event)"></app-search-bar>
+<span class="fullname">
+<h2>Available Books</h2>   
+    <span class="list">
+      <div class="product-card" *ngFor="let product of books"></div>
+    <span *ngIf="books && books.length > 0; else noBooks">
       <li *ngFor="let book of books">
         <h3>{{ book.title }}</h3>
         <p>By: {{ book.author }}</p>
-        <p>Price: ${{ book.price }}</p>
         <img *ngIf="book.imageUrl" [src]="book.imageUrl" alt="{{ book.title }} Cover" width="100">
+        <p>Price: ${{ book.price }}</p> 
         <p *ngIf="book.description">{{book.description}}</p>
-        <button (click)="addToCart(book)">Add to Cart</button>
+        <button class="btn btn-primary" (click)="addToCart(book)">Add to Cart</button>
       </li>
-    </ul>
+    </span>
+  </span>
     <ng-template #noBooks>
       <p>No books available at the moment.</p>
     </ng-template>
+  <span>
+
+    <!-- <app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+    <div class="catalog">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <img [src]="product.image" [alt]="product.name" class="product-image" />
+        <h2>{{ product.name }}</h2>
+        <p>Price: PKR {{ product.price }}</p>
+        <button>Add to Cart</button>
+      </div>
+    </div> -->

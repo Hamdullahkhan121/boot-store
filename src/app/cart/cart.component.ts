@@ -44,3 +44,9 @@ export class CartComponent {
 }
 
 
+// filteredProducts = [...this.products];
+
+// onSearch(query: string) {
+//   this.filteredProducts = this.products.filter(product =>
+//     product.name.toLowerCase().includes(query.toLowerCase())
+//   );

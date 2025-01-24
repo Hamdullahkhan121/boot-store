@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { CartComponent } from "./cart/cart.component";
 import { BookListComponent } from "./book-list/book-list.component";
+import { SearchBarComponent } from "./search-bar/search-bar.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { BookListComponent } from "./book-list/book-list.component";
     FormsModule,
     NavbarComponent,
     CartComponent,
-    BookListComponent
+    BookListComponent,
+    SearchBarComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

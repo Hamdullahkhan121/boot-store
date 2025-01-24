@@ -1,0 +1,19 @@
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchQuery"
+    placeholder="Search for products..."
+    aria-label="Search"
+    aria-describedby="search-button"
+    (keyup)="onSearch()"
+  />
+  <button
+    class="btn btn-primary"
+    type="button"
+    id="search-button"
+    (click)="onSearch()"
+  >
+    <i class="bi bi-search"></i> Search
+  </button>
+</div>

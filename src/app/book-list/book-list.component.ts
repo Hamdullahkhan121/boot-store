@@ -2,18 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from  '../cart/cart.service'; 
 import {Book} from './book.interface'
+import { SearchBarComponent } from "../search-bar/search-bar.component";
 
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SearchBarComponent],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
 export class BookListComponent {
   books: Book[] = [];
   constructor(private cartService: CartService) {}
+  // filteredProducts = [...this.products]
 
   ngOnInit(): void {
     // Sample book data (replace with your actual data fetching)
@@ -27,4 +29,9 @@ export class BookListComponent {
   addToCart(book: Book) {
     this.cartService.addToCart(book);
   }
-}
+
+  onSearch(query: string) {
+    this.books = this.books.filter(product =>
+      product.title.toLowerCase().includes(query.toLowerCase())
+    );
+}}
